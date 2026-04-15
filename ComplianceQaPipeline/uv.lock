@@ -4,10 +4,14 @@ requires-python = ">=3.13"
 resolution-markers = [
     "python_full_version >= '3.14' and sys_platform == 'win32'",
     "python_full_version >= '3.14' and sys_platform == 'emscripten'",
-    "python_full_version >= '3.14' and sys_platform != 'emscripten' and sys_platform != 'win32'",
+    "python_full_version >= '3.14' and sys_platform == 'darwin'",
+    "python_full_version >= '3.14' and sys_platform == 'linux'",
+    "python_full_version >= '3.14' and sys_platform != 'darwin' and sys_platform != 'emscripten' and sys_platform != 'linux' and sys_platform != 'win32'",
     "python_full_version < '3.14' and sys_platform == 'win32'",
     "python_full_version < '3.14' and sys_platform == 'emscripten'",
-    "python_full_version < '3.14' and sys_platform != 'emscripten' and sys_platform != 'win32'",
+    "python_full_version < '3.14' and sys_platform == 'darwin'",
+    "python_full_version < '3.14' and sys_platform == 'linux'",
+    "python_full_version < '3.14' and sys_platform != 'darwin' and sys_platform != 'emscripten' and sys_platform != 'linux' and sys_platform != 'win32'",
 ]
 
 [[package]]
@@ -164,6 +168,15 @@ wheels = [
 ]
 
 [[package]]
+name = "azure-common"
+version = "1.1.28"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/3e/71/f6f71a276e2e69264a97ad39ef850dca0a04fce67b12570730cb38d0ccac/azure-common-1.1.28.zip", hash = "sha256:4ac0cd3214e36b6a1b6a442686722a5d8cc449603aa833f3f0f40bda836704a3", size = 20914, upload-time = "2022-02-03T19:39:44.373Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/62/55/7f118b9c1b23ec15ca05d15a578d8207aa1706bc6f7c87218efffbbf875d/azure_common-1.1.28-py2.py3-none-any.whl", hash = "sha256:5c12d3dcf4ec20599ca6b0d3e09e86e146353d443e7fcc050c9a19c1f9df20ad", size = 14462, upload-time = "2022-02-03T19:39:42.417Z" },
+]
+
+[[package]]
 name = "azure-core"
 version = "1.39.0"
 source = { registry = "https://pypi.org/simple" }
@@ -206,6 +219,19 @@ wheels = [
 ]
 
 [[package]]
+name = "azure-identity-broker"
+version = "1.3.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "azure-identity" },
+    { name = "msal", extra = ["broker"] },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/01/ca/a8eb8571f71f244a07debc77f335deadee6ecb17be5743479f878a68eaa4/azure_identity_broker-1.3.0.tar.gz", hash = "sha256:1f40ea42d31da86669fe4cd4f93e4cdf91b9b1cffca1fba39cf5ba0f7df1bd27", size = 15612, upload-time = "2025-08-07T22:27:48.032Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/fa/f9/b3bd9b1c3d692404bedeec27aeb596d1984b1a99c6513e90e5f68cb95726/azure_identity_broker-1.3.0-py3-none-any.whl", hash = "sha256:1e17b9a48378ea32180ba428eb2eca8b29eda93310d7123beb246ae94306d8c0", size = 11362, upload-time = "2025-08-07T22:27:48.923Z" },
+]
+
+[[package]]
 name = "azure-monitor-opentelemetry"
 version = "1.8.7"
 source = { registry = "https://pypi.org/simple" }
@@ -244,6 +270,21 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/84/07/d6cd5bae90ea392529fa534f1a7b8282bfb5fee768c4a3138623dbcce1f1/azure_monitor_opentelemetry_exporter-1.0.0b49.tar.gz", hash = "sha256:020b5f991bbadd88ecc27ce35c4709bce44e8c826b3be74ab0bae2b208066e44", size = 318350, upload-time = "2026-03-19T00:14:35.197Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/c2/d0/dd017ef4af4f929ed80a5079a6227ff795db8a2888806aecdc53a2ffed49/azure_monitor_opentelemetry_exporter-1.0.0b49-py2.py3-none-any.whl", hash = "sha256:244a253c86696a0552ff36a0d2edb0007c07c9d835e222e8aabcc54cd5fb2c45", size = 241879, upload-time = "2026-03-19T00:14:36.679Z" },
+]
+
+[[package]]
+name = "azure-search-documents"
+version = "11.6.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "azure-common" },
+    { name = "azure-core" },
+    { name = "isodate" },
+    { name = "typing-extensions" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/cf/68/9d59a0bed5fd9581b45444e8abc3ecda97e0466ae0f03affc7cddfb9fa74/azure_search_documents-11.6.0.tar.gz", hash = "sha256:fcc807076ff82024be576ffccb0d0f3261e5c2a112a6666b86ec70bbdb2e1d64", size = 311194, upload-time = "2025-10-09T22:04:03.655Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c5/4c/d74e5c3ccc0b9ead0e400a2d70ded67554b56a5d799aaa8bf5baaacf4aea/azure_search_documents-11.6.0-py3-none-any.whl", hash = "sha256:c3eb2deaf7926844e99a881830861225ef68e8b3bc067a76019e87fc7f5586dc", size = 307935, upload-time = "2025-10-09T22:04:05.008Z" },
 ]
 
 [[package]]
@@ -417,7 +458,9 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "azure-identity" },
+    { name = "azure-identity-broker" },
     { name = "azure-monitor-opentelemetry" },
+    { name = "azure-search-documents" },
     { name = "azure-storage-blob" },
     { name = "fastapi" },
     { name = "firecrawl-py" },
@@ -443,7 +486,9 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "azure-identity", specifier = ">=1.25.3" },
+    { name = "azure-identity-broker", specifier = ">=0.3.1" },
     { name = "azure-monitor-opentelemetry", specifier = ">=1.8.7" },
+    { name = "azure-search-documents", specifier = ">=11.6.0" },
     { name = "azure-storage-blob", specifier = ">=12.28.0" },
     { name = "fastapi", specifier = ">=0.135.2" },
     { name = "firecrawl-py", specifier = ">=4.21.0" },
@@ -1142,6 +1187,11 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/3c/aa/5a646093ac218e4a329391d5a31e5092a89db7d2ef1637a90b82cd0b6f94/msal-1.35.1.tar.gz", hash = "sha256:70cac18ab80a053bff86219ba64cfe3da1f307c74b009e2da57ef040eb1b5656", size = 165658, upload-time = "2026-03-04T23:38:51.812Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/96/86/16815fddf056ca998853c6dc525397edf0b43559bb4073a80d2bc7fe8009/msal-1.35.1-py3-none-any.whl", hash = "sha256:8f4e82f34b10c19e326ec69f44dc6b30171f2f7098f3720ea8a9f0c11832caa3", size = 119909, upload-time = "2026-03-04T23:38:50.452Z" },
+]
+
+[package.optional-dependencies]
+broker = [
+    { name = "pymsalruntime", marker = "sys_platform == 'darwin' or sys_platform == 'linux' or sys_platform == 'win32'" },
 ]
 
 [[package]]
@@ -2071,6 +2121,25 @@ wheels = [
 [package.optional-dependencies]
 crypto = [
     { name = "cryptography" },
+]
+
+[[package]]
+name = "pymsalruntime"
+version = "0.20.2"
+source = { registry = "https://pypi.org/simple" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ff/6c/a4344eec42f3662f17363a1052b87d765d665a2ddb0e0bf6e85642b8b35f/pymsalruntime-0.20.2-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:6a2bb422fe28455ef53b0912f9d2d31e28845300a0377949ea01362dba23d826", size = 2195800, upload-time = "2026-01-10T00:03:53.426Z" },
+    { url = "https://files.pythonhosted.org/packages/c3/6f/622b3ecef3a4c8787260efebff29da1c5e0de9ca1a6c01251e005055cf3b/pymsalruntime-0.20.2-cp313-cp313-macosx_11_0_x86_64.whl", hash = "sha256:a13d1054467bf5f919848625a3833aa00ccd7d478af3ab052bbd29a9d7f33191", size = 2448824, upload-time = "2026-01-10T00:03:56.835Z" },
+    { url = "https://files.pythonhosted.org/packages/28/95/c11096e001ca8afc583b101d23c907433565b560b1081e46c70e671f8df2/pymsalruntime-0.20.2-cp313-cp313-manylinux_2_24_x86_64.whl", hash = "sha256:dcb7a7fb644f2fe6f55d3c35a231ebc82f89a261ce72533d888e9a8be7fcc5b9", size = 13153346, upload-time = "2026-01-10T00:38:00.221Z" },
+    { url = "https://files.pythonhosted.org/packages/2f/4e/4466c68d23f2bf13687bd6c6c615a87f7047946cb91430b27fb056e6729c/pymsalruntime-0.20.2-cp313-cp313-manylinux_2_35_x86_64.whl", hash = "sha256:9699447a58b5289e6f0cc4a72fa204c46f6daea1d78d0138a6c971efc6c87b7f", size = 12840387, upload-time = "2026-01-10T00:37:45.823Z" },
+    { url = "https://files.pythonhosted.org/packages/10/72/c7be5c01e45831071d270dfbb65ab1d5ced8d4e539c5d832e0b3b8e8c342/pymsalruntime-0.20.2-cp313-cp313-win32.whl", hash = "sha256:b4c8b42d812672c34aec067b386ac27cab130c26fd4ce1212c42c90b48c66212", size = 1100448, upload-time = "2026-01-10T00:03:35.116Z" },
+    { url = "https://files.pythonhosted.org/packages/31/dc/a53e44b9cabdf2884c895128d83981df9cd2b374b7593b1bf94e4450aa93/pymsalruntime-0.20.2-cp313-cp313-win_amd64.whl", hash = "sha256:66a032d46eecbb16d37c7bc6754d4541d4f7a0c495e627b16b30c40f2e12134c", size = 1252960, upload-time = "2026-01-10T00:03:26.583Z" },
+    { url = "https://files.pythonhosted.org/packages/f2/c1/230c4886222b3dcd3049a9a8b14fd8da56d64edc2cc9168224de14842434/pymsalruntime-0.20.2-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:94f79fdd002c6ef32e72f9477e05cbcf7c865c23a8fd2793b537060dbf28c72b", size = 2197778, upload-time = "2026-01-10T00:37:29.958Z" },
+    { url = "https://files.pythonhosted.org/packages/57/94/2a69771c432cb6972a706bd881fd44a337ad0ea929882bce45a73afea0fb/pymsalruntime-0.20.2-cp314-cp314-macosx_11_0_x86_64.whl", hash = "sha256:eb61456dbf379c6de628ffb59fe470381ec42ebbfde353ba69031cc113e72bbd", size = 2449052, upload-time = "2026-01-10T00:37:32.503Z" },
+    { url = "https://files.pythonhosted.org/packages/e3/43/d77115aa04ad683feca7dfd160cb0e9a4a00847ee120992e7d557c9bb214/pymsalruntime-0.20.2-cp314-cp314-manylinux_2_24_x86_64.whl", hash = "sha256:380ad15ebf3310dc71dad327a06da8373d60c39c95fd9a1bac33597d02b30665", size = 13145865, upload-time = "2026-01-10T00:38:02.919Z" },
+    { url = "https://files.pythonhosted.org/packages/a1/92/520be64b2103cba54ecaa06a7fdba4910b84b31c75b0b0418225a8410f4a/pymsalruntime-0.20.2-cp314-cp314-manylinux_2_35_x86_64.whl", hash = "sha256:0dcd71bb2bfecd5e5cf4d617ba497a8ba820b0e31e25b09e4e04afcf2eddbd46", size = 12835546, upload-time = "2026-01-10T00:37:48.924Z" },
+    { url = "https://files.pythonhosted.org/packages/30/f2/5c28ff853c16f3209fa8b62df86ef0e6f024fa1547c8e1e074ce9838905f/pymsalruntime-0.20.2-cp314-cp314-win32.whl", hash = "sha256:337e624e9b8f571052bc7f6c20ddac57ae801175d0ab33fa7e3a87080100144e", size = 1124988, upload-time = "2026-01-10T00:37:22.447Z" },
+    { url = "https://files.pythonhosted.org/packages/a6/d6/fdbad09236e41a821edef2f4e0d5f3a64a381e517ee1ab9a25514bcfe7d2/pymsalruntime-0.20.2-cp314-cp314-win_amd64.whl", hash = "sha256:3efd5cff72661c081b43d69b74775f2adb1dcecdd84df8f2cb151d19e6cf4750", size = 1290822, upload-time = "2026-01-10T00:37:18.209Z" },
 ]
 
 [[package]]
